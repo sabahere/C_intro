@@ -1,23 +1,36 @@
-//15:26
 #include<stdio.h>
 int main(void){
-    int num = 100;//initialising count for 3 digit
-    int counter = 0;//initialising count for first while loop
-    printf("Armstrong number of 3 digit are:\n");
-    while(num<=999){
-        int count = 0;//initialising count for second while loop
-        int sum = 0; //sum of each digit with power of three
-        int number = num;
-        while(count<3){//loop for calculating sum of three digit each with power of three
-            int digit = number%10;
+    long number;
+    printf("Enter any number within 10 digit:");
+    scanf("%li", &number);
+        long num = number;
+        long nos = num;
+        int counter = 1;
+        int digits = 0;
+        while(number>=1){// loop for calculating number of digits
+            int x = number%10;
             number = number/10;
-            sum = sum + (digit*digit*digit);
+            digits++;
+            counter++;
+        }
+        int count = 0;//initialising count
+        long sum = 0; //sum of each digit with power of three
+        while(count<=digits){//loop for calculating armstrong number
+            int digit = nos%10;
+            nos = nos/10;
+            int counting = 1;
+            long power = 1;
+            while(counting<=digits){//loop for calculating power of each digit
+                power = power*digit;
+                counting++;
+            }
+            sum = sum+power;// adding each digit with power of the total no. of digits 
             count++;
         }
         if(num == sum){//checking if sum is equal to number then it's an armstrong number
-            printf("%i\n", sum);
+            printf("This is an armstrong number.\n");
         }
-        num = num+1;//increasing number by 1
-        counter++;
-    }
+        else{
+            printf("This is not an armstrong number.\n");
+        }
 }
