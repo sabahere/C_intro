@@ -1,13 +1,13 @@
 #include<stdio.h>
-int hypotenuse(int a, int b);
+double hypotenuse(double a, double b);
 
-int main(void){
+double main(void){
     printf("Enter value of perpendicular and base:");
-    int perp, base;
-    scanf("%d%d", &perp, &base);
-    printf("Hypotenuse : %d\n", hypotenuse(perp, base));
+    double perp, base;
+    scanf("%lf%lf", &perp, &base);
+    printf("Hypotenuse : %.2f\n", hypotenuse(perp, base));
 }
-int hypotenuse(int a, int b){
+double hypotenuse(double a, double b){
     for(int h = 1; h<a+b; h++){
         if (h*h == (a*a)+(b*b)){
             return h;
