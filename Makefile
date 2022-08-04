@@ -1,5 +1,10 @@
-hello:
-	clang hello.c -o hello.o -lcs50
-
+ 
 clean:
-	rm -f *.o
+	find . -name '*.o' -delete
+
+	
+SRCS = $(shell find . -name '*.c')
+PROGS = $(patsubst %.c,%,$(SRCS))
+all: $(PROGS)
+%: %.c
+	$(CC) $(CFLAGS) -o $@.o $< -lcs50 -lm
