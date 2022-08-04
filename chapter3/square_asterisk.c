@@ -4,6 +4,7 @@ int main(void){
     printf("Enter positive integer (1-20):");//prompt user for an integer
     scanf("%d", &x);
     int count = 0;
+    if(x<=20){
     while(count<x){
         int i = 0;
         while(i<x){
@@ -13,6 +14,7 @@ int main(void){
         printf("\n");
         count++;
     }
+
     printf("\n\n");
     int counting = 0;//initialise loop for hollow square
     while(counting<x){
@@ -28,6 +30,7 @@ int main(void){
         }
         printf("\n");
         counting++;
+    }
     }
     }
     
